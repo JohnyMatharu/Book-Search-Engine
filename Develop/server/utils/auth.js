@@ -37,6 +37,7 @@ module.exports = {
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };
+//NEIL
 //Need json webtoken middlewear, graphql will replace controllers, install both servers
 //use the middlewear to connect to login route, login resolver, its setup already, needs to be used in the server
 //return token after login -make sure 
@@ -49,6 +50,12 @@ module.exports = {
 //mongoatlas database
 //deploy only once or atleast backend 100% done. 
 //Install-graphql, applo server, json webtoken (this will be done both front and back end) 
+
+//Tutor
+//graphql is for back end, there are two queries, one for front and one for back. front is asking and back
+//is arranging, back need resolvers, mutations, type def, and once we recieve data we will transfer it to front 
+// by index.js next to it, mutation will be done for json tokens. You will make changes to back end and replacing
+
 /*
 how can I install something on different servers front and back
 
@@ -67,12 +74,8 @@ client is front and server is back
 /*
 Assignment mod details
 
-Your Task
-Your Challenge this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
-
-This week, you’ll take a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
-
-To fulfill the Challenge, you’ll need to do the following:
+This week, you’ll take a fully functioning Google Books API search engine built with a RESTful API, and r
+efactor it to be a GraphQL API built with Apollo Server. It's already set up to allow users to save book searches to the back end.
 
 Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
 
@@ -82,7 +85,9 @@ Create an Apollo Provider so that requests can communicate with an Apollo Server
 
 Deploy the application to Heroku.
 
-Before you start, clone the starter code (Links to an external site.).
+Me: you will be replacing or making changes to routes/controllers with query, graphql & mutations etc.,
+and auth with doing login with queries, graphql, and mutation
+
 
 User Story
 AS AN avid reader
