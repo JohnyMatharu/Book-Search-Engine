@@ -45,11 +45,17 @@ module.exports = {
 //appollo server started first, comment routes -all - no need routes or controller, only typedef and resolvers
 //front end - need routes
 //backned first
-//concurrently package for both backend server and front server to runs same time (its setup already)
+
 //controller routes will be replaced by graphql
 //mongoatlas database
-//deploy only once or atleast backend 100% done. 
-//Install-graphql, applo server, json webtoken (this will be done both front and back end) 
+//deploy only once or atleast backend 100% done.
+
+//On Client and server installed graphql, appollo-server-express, apollo/client, react-router-dom, concurrently
+//json webtopken, jwt decode, faker
+
+
+//You may also need to run Mongo server, roboT, connect the database we use, make sure see the data in graphql
+//you may need to seed files to see the data if you don't see it
 
 //Tutor
 //graphql is for back end, there are two queries, one for front and one for back. front is asking and back
