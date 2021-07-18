@@ -52,6 +52,7 @@ module.exports = {
 
 //On Client and server installed graphql, appollo-server-express, apollo/client, react-router-dom, concurrently
 //json webtopken, jwt decode, faker
+//MongoDB is running, server.js and connection.js has been altered for mongoose
 
 
 //You may also need to run Mongo server, roboT, connect the database we use, make sure see the data in graphql
