@@ -51,7 +51,9 @@ return req;
 
 //Reminder, don't deploy anything until backend works perfect with graphql and localhost, push only once or twice
 
-//POA: MON-finish backend, work on remaining 2 front end files a day (search and saved), 21.3, 21.4. Deploy Heroku
+
+
+//POA: MON-test backend,  21.3, 21.4. work on remaining 2 front end files a day (search and saved), Deploy Heroku
 //search and login, sign up, and get all done by Tues night (21.5 tues also career connections ). Deploy Heroku
 
 
@@ -61,7 +63,7 @@ return req;
 
 
 
-//On Client and server installed graphql, appollo-server-express, apollo/client, react-router-dom, concurrently
+//On Client and server installed graphql, apollo-server-express@2.12.0, apollo/client, react-router-dom, concurrently
 //json webtopken, jwt decode, 
 //MongoDB is running (seed and check roboT), server.js and connection.js has been altered for mongoose
 
