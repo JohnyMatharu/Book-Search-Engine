@@ -16,6 +16,9 @@ const server = new ApolloServer({
   context: authMiddleware 
 });
 
+
+//Await..await server.start()
+
 server.applyMiddleware({ app });
 
 

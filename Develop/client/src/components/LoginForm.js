@@ -1,7 +1,14 @@
+//Needs alteration
+//Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
+
+
 // see SignupForm.js for comments
+
+
+
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-
+//Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
@@ -27,7 +34,8 @@ const LoginForm = () => {
 
     try {
       const response = await loginUser(userFormData);
-
+//Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
+i
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
