@@ -49,10 +49,10 @@ return req;
 //the link bottom of server.js for graphql use testing data for typedef and resolvers, no seeder, adjustments
 //need to be made to front end code wherever mentioned to match new change, Mongo should be running 
 
-//POA: finish backend or atleast testing today,ch3 and post, work on remaining 2 front end files a day (saved), 
-//finish ReadMe with Heroku running and screenshots
-//search and login, sign up, and get all done by Tues night (also chp 4 mon, chp 5 tues also career connections ). 
-//check final Heroku
+//Reminder, don't deploy anything until backend works perfect with graphql and localhost, push only once or twice
+
+//POA: MON-finish backend, work on remaining 2 front end files a day (search and saved), 21.3, 21.4. Deploy Heroku
+//search and login, sign up, and get all done by Tues night (21.5 tues also career connections ). Deploy Heroku
 
 
 //Go through notes now and make changes, DEPLOY HEROKU FIRST and submit assignment
