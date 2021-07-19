@@ -71,7 +71,7 @@ You can look at models and routes for extra info
 
 Modify the existing authentication middleware so that it works in the context of a GraphQL API.
 
-?Create an Apollo Provider so that requests can communicate with an Apollo Server?
+
 
 Make sure that if you need to write an additional query for front end connecting to query in type-def/resolvers
 Mostly it is created already, needs to connect to alternative source channel only
@@ -106,25 +106,6 @@ The Viewing Lernantino's Books page shows the books that the user Lernaninto has
 you will add some functionality to the front end
 
 The best way to find working knowledge is look gif on assignment page and dowloand code on desktop and run
-
-
-
-
-
-
-
-
-
-Application must be deployed to Heroku.
-
-Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-How to Submit the Challenge
-You are required to submit BOTH of the following for review:
-
-The URL of the functional, deployed application.
-
-The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
 */
 
