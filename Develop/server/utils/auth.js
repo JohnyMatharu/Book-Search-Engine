@@ -62,7 +62,7 @@ return req;
 
 
 //On Client and server installed graphql, appollo-server-express, apollo/client, react-router-dom, concurrently
-//json webtopken, jwt decode, faker
+//json webtopken, jwt decode, 
 //MongoDB is running (seed and check roboT), server.js and connection.js has been altered for mongoose
 
 /*
