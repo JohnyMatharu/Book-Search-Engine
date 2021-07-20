@@ -4,18 +4,19 @@ const { signToken } = require('../utils/auth');
 
 //only have 3 models, index, user and books (books is single - represent thoughts and reactions in 21.6)
 
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
-      if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
+     // if (context.user) {
+        const userData = await User.find()
           .select('-__v -password')
           .populate('books');
 
-        return userData;
-      }
+       return userData;
+    //  }
 
-      throw new AuthenticationError('Not logged in');
+      //throw new AuthenticationError('Not logged in');
     },
     
     users: async () => {

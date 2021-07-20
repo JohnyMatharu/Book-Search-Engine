@@ -28,11 +28,10 @@ module.exports = {
       return res.status(400).json({ message: 'invalid token!' });
     }
     //In module 21.6, the code is written as such-
-return req;
 //return token after login -make sure
 
     // send to next endpoint
-    //next();
+    next();
 
   },
   signToken: function ({ username, email, _id }) {
@@ -53,8 +52,8 @@ return req;
 
 
 
-//POA: MON-test backend,  21.3, 21.4. work on remaining 2 front end files a day (search and saved), Deploy Heroku
-//search and login, sign up, and get all done by Tues night (21.5 tues also career connections ). Deploy Heroku
+//POA: MON- 21.3, 21.4. 21.5 career
+//4 front end files: save and search and login, sign up, and get all done by Wed night. Deploy Heroku
 
 
 //Go through notes now and make changes, DEPLOY HEROKU FIRST and submit assignment
@@ -66,6 +65,8 @@ return req;
 //On Client and server installed graphql, apollo-server-express@2.12.0, apollo/client, react-router-dom, concurrently
 //json webtopken, jwt decode, 
 //MongoDB is running (seed and check roboT), server.js and connection.js has been altered for mongoose
+
+//given to me by Joshi AskBCS https://blog.logrocket.com/complete-guide-to-graphql-playground/
 
 /*
 
