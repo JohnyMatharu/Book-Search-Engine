@@ -42,7 +42,7 @@ export const QUERY_USER = gql`
 //this has to be checked
 export const QUERY_ME = gql`
   {
-   
+    me {
     _id
       username
       email
@@ -57,7 +57,8 @@ export const QUERY_ME = gql`
         title
       }
       bookCount
-    };
+    }
+    }
 `;
 //this part needs to be checked, may be needed, if yes make adjustments 
 /*
