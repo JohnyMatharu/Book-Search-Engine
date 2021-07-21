@@ -1,4 +1,5 @@
 //TO be altered,check handleSaveBook function
+//Use hooks to use Query or mutation data as shown in mod 12.3.5, use object structure to access data
 
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
@@ -6,6 +7,10 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+//this may need revision
+import { useQuery } from '@apollo/client';
+import { QUERY_BOOKS, QUERY_ME } from '../utils/queries';
+
 
 const SearchBooks = () => {
   // create state for holding returned google api data

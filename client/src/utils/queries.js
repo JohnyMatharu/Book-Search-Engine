@@ -1,91 +1,66 @@
-//This will hold the query GET_ME, which will execute the me query set up using Apollo Server.
-/*
+//to be tested
+
 import { gql } from '@apollo/client';
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_BOOKS = gql`
+  query books($username: String) {
+    books(username: $username) {
       _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
+      authors
+      description
+      bookId
+      image
+      link
+      title
     }
   }
 `;
 
-export const QUERY_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
-    }
-  }
-`;
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
+   
       _id
       username
       email
-      friendCount
-      friends {
+      savedBooks
+      {
         _id
-        username
+        authors
+        description
+        bookId        
+        image 
+        link
+        title
       }
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-        reactionCount
-      }
+      bookCount
     }
   }
 `;
 
+//this has to be checked
 export const QUERY_ME = gql`
   {
-    me {
-      _id
+   
+    _id
       username
       email
-      friendCount
-      thoughts {
+      savedBooks
+      {
         _id
-        thoughtText
-        createdAt
-        reactionCount
-        reactions {
-          _id
-          createdAt
-          reactionBody
-          username
-        }
+        authors
+        description
+        bookId        
+        image 
+        link
+        title
       }
-      friends {
-        _id
-        username
-      }
-    }
-  }
+      bookCount
+    };
 `;
-
+//this part needs to be checked, may be needed, if yes make adjustments 
+/*
 export const QUERY_ME_BASIC = gql`
   {
     me {
@@ -100,5 +75,5 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
-
 */
+

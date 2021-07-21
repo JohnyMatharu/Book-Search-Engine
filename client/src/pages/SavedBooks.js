@@ -1,4 +1,11 @@
-//Needs alteration
+//Needs alteration/revision
+//Use hooks to use Query or mutation data as shown in mod 12.3.5, use object structure to use data
+
+import { useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { QUERY_BOOKS, QUERY_ME } from '../utils/queries';
+import { SAVE_BOOK } from '../utils/mutations';
+import { REMOVE_BOOK } from '../utils/mutations';
 
 //Remove the useEffect() Hook that sets the state for UserData.
 

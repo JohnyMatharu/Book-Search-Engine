@@ -52,8 +52,7 @@ module.exports = {
 
 
 
-//POA: MON- 21.3, 21.4. 21.5 career
-//4 front end files: save and search and login, sign up, and get all done by Wed night. Deploy Heroku
+//21.4. 21.5 career, mutations.js, 4 front end files: save and search and login, sign up, and get all done by Wed night. Deploy Heroku check package.json
 
 
 //Go through notes now and make changes, DEPLOY HEROKU FIRST and submit assignment
@@ -63,7 +62,7 @@ module.exports = {
 
 
 //On Client and server installed graphql, apollo-server-express@2.12.0, apollo/client, react-router-dom, concurrently
-//json webtopken, jwt decode, 
+//json webtopken, jwt decode(only client), some items were taken off from sever side which were not necessary
 //MongoDB is running (seed and check roboT), server.js and connection.js has been altered for mongoose
 
 //given to me by Joshi AskBCS https://blog.logrocket.com/complete-guide-to-graphql-playground/

@@ -1,14 +1,7 @@
 //mutations.js:
+//To be tested
 
-//LOGIN_USER will execute the loginUser mutation set up using Apollo Server.
-
-//ADD_USER will execute the addUser mutation.
-
-//SAVE_BOOK will execute the saveBook mutation.
-
-//REMOVE_BOOK will execute the removeBook mutation.
-
-/*
+  
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
@@ -35,62 +28,28 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-      }
-    }
-  }
-`;
-
-export const ADD_REACTION = gql`
-  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
-      _id
-      reactionCount
-      reactions {
-        _id
-        reactionBody
-        createdAt
-        username
-      }
-    }
-  }
-`;
-
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+ 
+//$authors: [String]! has to be checked, authors plural has to be checked here and type def
+export const SAVE_BOOK = gql`
+  mutation saveBook($authors: [String]!, $description: String!, $title: String!, $bookId: String!, $image: String!, $link: String!) {
+    saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
       _id
       username
-      friendCount
-      friends {
-        _id
-        username
-      }
+      email
+      savedBooks
+      bookCount
     }
   }
 `;
 
-export const REMOVE_FRIEND = gql`
-  mutation removeFriend($id: ID!) {
-    removeFriend(id: $id) {
+export const REMOVE_BOOK = gql`
+  mutation removeBook($bookId: String!) {
+    removeFriend(bookId: $bookId) {
       _id
       username
-      friends {
-        _id
-        username
-      }
+      email
+      savedBooks
+      bookCount
     }
   }
 `;
-
-
-*/

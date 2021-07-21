@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
+import { useQuery } from '@apollo/client';
+import { QUERY_THOUGHTS } from '../utils/queries';
 
 import Auth from '../utils/auth';
 

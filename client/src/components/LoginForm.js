@@ -1,9 +1,11 @@
 //Needs alteration
 //Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
-
+//Use hooks to use Query or mutation data as shown in mod 12.3.5, use object structure to use data
 
 // see SignupForm.js for comments
-
+//Check this out
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
 
 import React, { useState } from 'react';
@@ -16,6 +18,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -31,22 +34,18 @@ const LoginForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-
+    
     try {
-      const response = await loginUser(userFormData);
-//Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
-i
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
 
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
     }
+
+
 
     setUserFormData({
       username: '',
