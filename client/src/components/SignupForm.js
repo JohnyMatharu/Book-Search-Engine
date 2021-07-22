@@ -16,7 +16,8 @@ const SignupForm = () => {
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
   
-  const [addUser, { error }] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+  console.log(error);
   
   const [validated] = useState(false);
   // set state for alert
@@ -39,6 +40,8 @@ const SignupForm = () => {
 //Replace the addUser() functionality imported from the API file with the ADD_USER mutation functionality.
 //This whole section has been changed and to be checked if working
 //check line 45 ...userFormData or just (userFormData) and variables:
+console.log(addUser);
+
 try {
   const { data } = await addUser({
     variables: {...userFormData},
