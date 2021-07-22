@@ -6,6 +6,7 @@ import React, { useState} from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
+import { useParams } from "react-router-dom";
 
 //Check the above save book and get me
 //Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
@@ -19,7 +20,10 @@ const SavedBooks = () => {
   const [setUserData] = useState({});
 // use this to determine if `useEffect()` hook needs to run
 //check syntax 
-
+const{ id: bookId  } = useParams();
+//here, We may not need data back in a case like this
+const {data} = useMutation(REMOVE_BOOK, { variables
+: { id: bookId }});
 const { data: userData } = useQuery(GET_ME);
 //Bring get me data hook here
 const userDataLength = Object.keys(userData).length;
@@ -60,13 +64,8 @@ const userDataLength = Object.keys(userData).length;
 //Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function that's imported from API file. (Make sure you keep the removeBookId() function in place!)
 //reminder to check login and signup arguments 
     try {
-const{ id: bookId  } = useParams();
-//here, We may not need data back in a case like this
-const {data} = useMutation(REMOVE_BOOK, { variables
-: { id: bookId }});
 //check this .book below or could be .removeBook
 const removeBook = data?.book || {};
-
 //check following response
 
 if (!response.ok) {
