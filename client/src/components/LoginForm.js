@@ -18,8 +18,9 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const {loginUser} = useMutation(LOGIN_USER, { variables
-    : { ...userFormData }});
+
+    const [loginUser, {error}] = useMutation(LOGIN_USER); 
+   
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -38,7 +39,7 @@ const LoginForm = () => {
     
     try {
 //this format needs revision
-  
+
       const { data } = await loginUser({
         variables: { ...userFormData }
       });
@@ -50,11 +51,14 @@ const LoginForm = () => {
 
 
 
+
+    
+
     setUserFormData({
       username: '',
       email: '',
       password: '',
-    });git
+    });
   };
 
 //this part needs to be checked for renderring objects created by mutation

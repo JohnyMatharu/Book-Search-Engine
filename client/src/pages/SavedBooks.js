@@ -22,8 +22,10 @@ const SavedBooks = () => {
 //check syntax 
 const{ id: bookId  } = useParams();
 //here, We may not need data back in a case like this
-const {data} = useMutation(REMOVE_BOOK, { variables
-: { id: bookId }});
+
+const [saveBook, {data, err}] = useMutation(REMOVE_BOOK); 
+
+
 const { data: userData } = useQuery(GET_ME);
 //Bring get me data hook here
 const userDataLength = Object.keys(userData).length;
@@ -64,15 +66,19 @@ const userDataLength = Object.keys(userData).length;
 //Use the useMutation() Hook to execute the REMOVE_BOOK mutation in the handleDeleteBook() function instead of the deleteBook() function that's imported from API file. (Make sure you keep the removeBookId() function in place!)
 //reminder to check login and signup arguments 
     try {
+
+      const {data} =removeBook ({ variables
+        : { id: bookId }});
+
 //check this .book below or could be .removeBook
 const removeBook = data?.book || {};
 //check following response
 
-if (!response.ok) {
+if (data.error) {
         throw new Error('something went wrong!');
       }
-      const updatedUser = await response.json();
-      setUserData(updatedUser);
+     
+      //setUserData(updatedUser);
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {

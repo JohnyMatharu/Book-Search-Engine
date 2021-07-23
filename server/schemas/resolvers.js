@@ -63,6 +63,7 @@ const resolvers = {
     //Check this especially args
     //addUser(username: String!, email: String!, password: String!): Auth
     addUser: async (parent, args) => {
+      console.log(args);
       const user = await User.create(args);
       const token = signToken(user);
 //check return auth
