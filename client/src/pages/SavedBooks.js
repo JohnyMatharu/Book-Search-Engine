@@ -23,11 +23,13 @@ const SavedBooks = () => {
 const{ id: bookId  } = useParams();
 //here, We may not need data back in a case like this
 
-const [saveBook, {data, err}] = useMutation(REMOVE_BOOK); 
+const [removeBook, {error}] = useMutation(REMOVE_BOOK); 
 
 
 const { data: userData } = useQuery(GET_ME);
-//Bring get me data hook here
+//Before this looked like this
+
+
 const userDataLength = Object.keys(userData).length;
 //Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
 
@@ -67,11 +69,17 @@ const userDataLength = Object.keys(userData).length;
 //reminder to check login and signup arguments 
     try {
 
-      const {data} =removeBook ({ variables
+      const {data} = await removeBook ({ variables
         : { id: bookId }});
 
-//check this .book below or could be .removeBook
-const removeBook = data?.book || {};
+//this part may need revision as are calling mutation here which will return us user info, we need to render
+//this info as updated info, current rederring is userData and specifically we need userData.saveBooks 
+
+
+//an updated userData should be rederred by GET_ME
+//check if we need to assign this data to userData here to update the userData with new data, or do we need this
+//userData = data? || {};
+
 //check following response
 
 if (data.error) {
