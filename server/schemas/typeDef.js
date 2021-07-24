@@ -5,14 +5,14 @@ const { gql } = require('apollo-server-express');
 //check authors: [String], and need of _id in presence of bookId
 
 const typeDefs = gql`
+
 type Book {
-_id: ID
-authors: [String]
-description: String
-bookId: String
-image: String
-link: String
-title: String
+  bookId: ID!
+  authors: [String]
+  description: String
+  title: String!
+  image: String
+  link: String
 }
 
 
@@ -40,8 +40,8 @@ bookCount: Int
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(authors: [String]!, description: String!, title: String!, bookId: String, image: String!, link: String!): User
-    removeBook(bookId: String!): User
+    saveBook(authors: [String]!, description: String!, title: String!, bookId: ID!, image: String!, link: String!): User
+    removeBook(bookId: ID!): User
   }
 `;
 

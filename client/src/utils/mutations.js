@@ -31,8 +31,9 @@ export const ADD_USER = gql`
  
 //$authors: [String]! has to be checked, authors plural has to be checked here and type def
 export const SAVE_BOOK = gql`
-  mutation saveBook($authors: [String]!, $description: String!, $title: String!, $bookId: String!, $image: String!, $link: String!) {
+  mutation saveBook($authors: [String]!, $description: String!, $title: String!, $bookId: ID!, $image: String!, $link: String!) {
     saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
+    
       _id
       username
       email

@@ -33,7 +33,9 @@ console.log(userData)
 
 const userDataLength = Object.keys(userData).length;
 //Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
-
+//useEffect(() => {
+  //return () => saveBookIds(savedBookIds);
+//});
 
 
  //this whole section was commented and has to be checked 
@@ -58,7 +60,7 @@ const userDataLength = Object.keys(userData).length;
     };
 
     getUserData();
-  }, [userDataLength]);
+  }, []);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {

@@ -5,13 +5,14 @@ import { gql } from '@apollo/client';
 export const QUERY_BOOKS = gql`
   query books($username: String) {
     books(username: $username) {
-      _id
+      
+      bookId
       authors
       description
-      bookId
+      title
       image
       link
-      title
+    
     }
   }
 `;
@@ -26,13 +27,12 @@ export const QUERY_USER = gql`
       email
       savedBooks
       {
-        _id
-        authors
-        description
-        bookId        
-        image 
-        link
-        title
+        bookId
+      authors
+      description
+      title
+      image
+      link
       }
       bookCount
     }
@@ -48,13 +48,12 @@ export const GET_ME = gql`
       email
       savedBooks
       {
-        _id
-        authors
-        description
-        bookId        
-        image 
-        link
-        title
+        bookId
+      authors
+      description
+      title
+      image
+      link
       }
       bookCount
     }

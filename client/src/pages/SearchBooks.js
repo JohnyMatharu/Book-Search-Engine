@@ -71,8 +71,11 @@ try {
 //Make sure you keep the logic for saving the book's ID to state in the try...catch block!
       //check format
 
-const {data} = await saveBook ({ variables
-        : { bookToSave, token}});
+      const { data } = await saveBook({
+        variables: { bookData: { ...bookToSave } },
+      });
+
+//bookData does not have 'link' may be issue, how to connect bookData with bookToSave
 
 //We are not renderring this data here, because we are only doing mutation, because we are doing it on 
 //SavedBook page and thats where user info
