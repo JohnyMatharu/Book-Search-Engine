@@ -16,7 +16,7 @@ module.exports = {
     }
 
     if (!token) {
-      return res.status(400).json({ message: 'You have no token!' });
+      return req;
     }
 
     // verify token and get user data out of it
@@ -29,7 +29,7 @@ module.exports = {
     }
     //In module 21.6, the code is written as such-
 //return token after login -make sure
-
+//return req;
     // send to next endpoint
     next();
 

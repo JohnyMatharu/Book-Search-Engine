@@ -85,7 +85,7 @@ const resolvers = {
           { new: true }
         );
 //this part needs fixing
-        return { token, user, book };
+        return {user};
       }
 
       throw new AuthenticationError('You need to be logged in!');
