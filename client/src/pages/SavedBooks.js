@@ -1,8 +1,8 @@
+import React, {useEffect, useState} from 'react';
 import { REMOVE_BOOK } from '../utils/mutations';
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
-import React, { useState} from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
@@ -26,16 +26,17 @@ const{ id: bookId  } = useParams();
 const [removeBook, {error}] = useMutation(REMOVE_BOOK); 
 
 
-const { data: userData } = useQuery(GET_ME);
-//Before this looked like this
+const { loading, data } = useQuery(GET_ME);
 
+const userData = data?.me || {};
+console.log(userData)
 
 const userDataLength = Object.keys(userData).length;
 //Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
 
 
 
- /*
+ //this whole section was commented and has to be checked 
   useEffect(() => {
     const getUserData = async () => {
       try {
@@ -43,7 +44,9 @@ const userDataLength = Object.keys(userData).length;
         if (!token) {
           return false;
         }
-        const response = await getMe(token);
+
+        //this line was modified needs checking
+        const response = await userData(token);
         if (!response.ok) {
           throw new Error('something went wrong!');
         }
@@ -56,7 +59,6 @@ const userDataLength = Object.keys(userData).length;
 
     getUserData();
   }, [userDataLength]);
-*/
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
