@@ -78,15 +78,20 @@ const resolvers = {
     saveBook: async (parent, args, context) => {
       if (context.user) {
         const book = await Book.create({ ...args, username: context.user.username });
+console.log(book)
+      const user =  await User.findByIdAndUpdate(
+       
+         context.user._id,
+          { $push: { savedBooks: book } },
+    //      { new: true }
+        )
+        .populate('books');
+        ;
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { books: book._id } },
-          { new: true }
-        );
 //this part needs fixing
+console.log(user)
         return user;
-      console.log(user);
+        
       }
 
       throw new AuthenticationError('You need to be logged in!');
@@ -94,18 +99,23 @@ const resolvers = {
 
 //this part needs major checking    
  // removeBook(bookId: String!): User
-
-removeBook: async (parent, args, context) => {
+ removeBook: async (parent, args, context) => {
   if (context.user) {
-    const book = await Book.update({ ...args, username: context.user.username });
-
-    await User.findByIdAndUpdate(
-      { _id: context.user._id },
-      { $pull: { books: book._id } },
-      { new: true }
-    );
+    const book = await Book.deleteOne({ ...args, username: context.user.username });
+    console.log(book)
+    const user =  await User.findByIdAndUpdate(
+       
+      context.user._id,
+       { $pull: { savedBooks: book._id } },
+ //      { new: true }
+     )
 //this part needs fixing
-    return user;
+.populate('books');
+;
+
+//this part needs fixing
+console.log(user)
+return user;
   }
 
   throw new AuthenticationError('You need to be logged in!');
