@@ -85,7 +85,8 @@ const resolvers = {
           { new: true }
         );
 //this part needs fixing
-        return {user};
+        return user;
+      console.log(user);
       }
 
       throw new AuthenticationError('You need to be logged in!');
@@ -104,7 +105,7 @@ removeBook: async (parent, args, context) => {
       { new: true }
     );
 //this part needs fixing
-    return { token, user, book };
+    return user;
   }
 
   throw new AuthenticationError('You need to be logged in!');
